@@ -404,6 +404,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1684685360528710457, guid: f49bcc0a0afe74e4e99d4a3262558041, type: 3}
+      propertyPath: wallCheck
+      value: 
+      objectReference: {fileID: 2049706429}
+    - target: {fileID: 1684685360528710457, guid: f49bcc0a0afe74e4e99d4a3262558041, type: 3}
+      propertyPath: groundLayer.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1684685360528710457, guid: f49bcc0a0afe74e4e99d4a3262558041, type: 3}
+      propertyPath: jumpableGround.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f49bcc0a0afe74e4e99d4a3262558041, type: 3}
 --- !u!1 &814221452
@@ -532,7 +544,8 @@ GameObject:
   - component: {fileID: 1000400105}
   - component: {fileID: 1000400103}
   - component: {fileID: 1000400104}
-  m_Layer: 0
+  - component: {fileID: 1000400106}
+  m_Layer: 3
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1037,7 +1050,7 @@ CompositeCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_GeometryType: 0
@@ -1078,6 +1091,25 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!251 &1000400106
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000400099}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 0
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &1696788115
 GameObject:
   m_ObjectHideFlags: 0
@@ -1208,6 +1240,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b76ab77b79b4c2e418b4250fb8565d0f, type: 3}
+--- !u!4 &1851404427 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1684685360528710454, guid: f49bcc0a0afe74e4e99d4a3262558041, type: 3}
+  m_PrefabInstance: {fileID: 738651117}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1975379139 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3389559355198231536, guid: d2a93b2f1fa52aa4fb9499411b4de4a4, type: 3}
@@ -1218,3 +1255,34 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 3389559355198231537, guid: d2a93b2f1fa52aa4fb9499411b4de4a4, type: 3}
   m_PrefabInstance: {fileID: 34840199}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2049706428
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2049706429}
+  m_Layer: 0
+  m_Name: wallCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2049706429
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2049706428}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.477, y: 0.741, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1851404427}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
